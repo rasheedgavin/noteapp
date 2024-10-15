@@ -1,0 +1,150 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.note-list {
+    margin-top: 20px;
+}
+
+.note-item {
+    background-color: #f0f8ff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.note-item:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.note-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.note-item ul li {
+    margin-bottom: 10px;
+}
+
+.note-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.2s ease;
+}
+
+.note-title:hover {
+    color: #1e90ff;
+}
+
+.note-preview {
+    color: #666;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.note-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+
+.note-date { 
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+.create-note {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create-note button {
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.create-note button a {
+    color: white;
+    text-decoration: none;
+}
+
+.create-note button:hover {
+    background-color: #007acc;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+    color: white;
+}

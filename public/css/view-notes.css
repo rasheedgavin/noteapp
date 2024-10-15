@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.alert.error {
+    background-color: #f44336;
+    color: white;
+}
+
+.note-detail {
+    margin-top: 20px;
+}
+
+.title h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.notes p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 10px;
+    white-space: pre-wrap;
+}
+
+.timestamps {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888; 
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+.back-to-notes {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-to-notes a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-to-notes a:hover {
+    text-decoration: underline;
+}
+
