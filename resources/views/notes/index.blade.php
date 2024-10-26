@@ -94,19 +94,18 @@
 
         /* Note Item Styling */
         .note-item {
-            background-color: #84a98c; /* Muted green */
+            background-color: #c4e3cb; /* Light mint green */
             padding: 20px;
             border-radius: 12px;
-            color: #ffffff;
+            color: #333333;
             text-decoration: none;
             display: flex;
             flex-direction: column;
             gap: 10px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-            z-index: 2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .note-item:hover {
@@ -117,11 +116,11 @@
         .note-title {
             font-weight: bold;
             font-size: 1.3em;
-            color: #d9e2d1; /* Lightened green for title */
+            color: #3a4f41;
         }
 
         .note-preview {
-            color: #e0f0ff;
+            color: #4a6057;
             font-size: 1em;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -130,8 +129,48 @@
 
         .note-date {
             font-size: 0.85em;
-            color: #c7c7c7;
+            color: #7a8c85;
             text-align: right;
+        }
+
+        /* Three Dots Menu */
+        .options-menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2em;
+            color: #6b7280;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        /* Edit/Delete Options */
+        .menu-options {
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            z-index: 3;
+        }
+
+        .menu-options a {
+            color: #333;
+            font-size: 0.9em;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .menu-options a:hover {
+            background-color: #f0f0f0;
         }
 
         /* Floating Button Styling */
@@ -143,7 +182,7 @@
         }
 
         .create-note button {
-            background-color: #b7c7d6; /* Neutral light blue */
+            background-color: #8fc1a9; /* Matching soft green */
             color: #ffffff;
             width: 60px;
             height: 60px;
@@ -156,7 +195,7 @@
         }
 
         .create-note button:hover {
-            background-color: #9aa8b4;
+            background-color: #7da591;
             transform: scale(1.1);
         }
 
@@ -196,13 +235,25 @@
     
     <div class="note-list">
         @foreach ($notes->reverse() as $note)
-            <a href="{{ route('notes.view', ['note' => $note]) }}" class="note-item">
-                <div class="note-title">{{ $note->title }}</div>
-                <div class="note-preview">{{ $note->notes }}</div>
-                <div class="note-date">
-                    {{ $note->updated_at > $note->created_at ? $note->updated_at->format('F j, g:i A') : $note->created_at->format('F j, g:i A') }}
+            <div class="note-item">
+                <span class="options-menu" onclick="toggleMenu(this)">
+                    <i class="fas fa-ellipsis-h"></i>
+                </span>
+                <div class="menu-options">
+                    <a href="{{ route('notes.edit', ['note' => $note]) }}">Edit</a>
+                    <a href="{{ route('notes.delete', ['note' => $note]) }}">Delete</a>
                 </div>
-            </a>
+                <a href="{{route('notes.view', ['note' => $note])}}">
+                    <div>
+                        <div class="note-title">{{ $note->title }}</div>
+                        <div class="note-preview">{{ $note->notes }}</div>
+                        <div class="note-date">
+                            {{ $note->updated_at > $note->created_at ? $note->updated_at->format('F j, g:i A') : $note->created_at->format('F j, g:i A') }}
+                        </div>
+                    </div>
+                </a>
+            </div>
+     
         @endforeach
     </div>
     
@@ -222,6 +273,17 @@
                 setTimeout(function() {
                     successAlert.style.display = 'none';
                 }, 2000);
+            }
+        });
+
+        function toggleMenu(element) {
+            var menu = element.nextElementSibling;
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.options-menu')) {
+                document.querySelectorAll('.menu-options').forEach(menu => menu.style.display = 'none');
             }
         });
     </script>

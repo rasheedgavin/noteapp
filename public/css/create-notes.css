@@ -1,23 +1,24 @@
 body {
+    background: linear-gradient(135deg, #4b79a1, #283e51);
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
+    color: #fff; /* Text color updated */
 }
 
 .container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 150px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent background */
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     text-align: center;
-    color: #333;
     margin-bottom: 20px;
+    font-size: 2.5rem; /* Font size updated */
 }
 
 .alert.error {
@@ -57,7 +58,7 @@ textarea.form-control {
 }
 
 .submit-button {
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Update this if you want a different color */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -76,11 +77,10 @@ textarea.form-control {
 }
 
 .back-to-notes a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-size: 16px;
+    color: white; /* Ensure the link color is white */
 }
 
 .back-to-notes a:hover {
-    text-decoration: underline;
+ /* Ensure the link color is white */
+    text-decoration:  white;
 }
