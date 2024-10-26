@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('home', [noteController::class, 'home'])->name('notes.home');
 Route::get('/notes', [noteController::class, 'index'])->name('notes.index');
 Route::get('/notes/create', [noteController::class, 'create'])->name('notes.create');
 Route::post('/notes', [noteController::class, 'save'])->name('notes.save');

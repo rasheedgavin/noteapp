@@ -8,6 +8,10 @@ use App\Models\Note;
 
 class NoteController extends Controller
 {
+    public function home(){
+        return view('welcome');
+    }
+    
     public function index(){
         $notes = Note::all();
         return view('notes.index', ['notes' => $notes]);
