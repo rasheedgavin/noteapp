@@ -18,7 +18,6 @@
             align-items: center;
             min-height: 100vh;
             overflow-y: auto;
-            position: relative;
         }
 
         /* Background Graphics */
@@ -49,6 +48,7 @@
         .container {
             width: 95%;
             max-width: 600px;
+            height: 90vh; /* Increased height for more content space */
             padding: 20px;
             background-color: #c4e3cb;
             border-radius: 12px;
@@ -57,9 +57,31 @@
             flex-direction: column;
             position: relative;
             z-index: 2;
+            overflow: hidden;
+        }
+
+        /* Back Icon */
+        .back-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #6b7280;
+            font-size: 24px;
+            transition: color 0.3s ease;
+            z-index: 3;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .back-icon:hover {
+            color: #4b5563;
         }
 
         /* Title and Date */
+        .title {
+            text-align: left; /* Align title and date to the left */
+            margin-top: 50px; /* Spacing between back icon and title */
+        }
+
         .title h2 {
             font-size: 1.8em;
             font-weight: bold;
@@ -84,24 +106,11 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             margin-top: 15px;
             overflow-y: auto;
+            max-height: calc(90vh - 150px); /* Adjusted for new container height */
         }
 
         .note-item p {
             margin: 0;
-        }
-
-        /* Back Icon */
-        .back-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #6b7280;
-            font-size: 24px;
-            transition: color 0.3s ease;
-        }
-
-        .back-icon:hover {
-            color: #4b5563;
         }
 
         /* Button Container */

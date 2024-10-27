@@ -9,7 +9,7 @@
         /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f3f4f6; /* Soft gray background */
+            background-color: #f3f4f6;
             color: #333;
             margin: 0;
             padding: 0 20px;
@@ -35,13 +35,13 @@
         }
 
         body::before {
-            background-color: #c7c9d3; /* Light gray accent */
+            background-color: #c7c9d3;
             top: -60px;
             left: -60px;
         }
 
         body::after {
-            background-color: #b0b3ba; /* Darker gray accent */
+            background-color: #b0b3ba;
             bottom: -60px;
             right: -60px;
         }
@@ -84,7 +84,7 @@
         /* Note List Styling */
         .note-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamic columns */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
             width: 100%;
             max-width: 1000px;
@@ -94,17 +94,16 @@
 
         /* Note Item Styling */
         .note-item {
-            background-color: #c4e3cb; /* Light mint green */
+            background-color: #c4e3cb;
             padding: 20px;
             border-radius: 12px;
             color: #333333;
-            text-decoration: none;
             display: flex;
             flex-direction: column;
             gap: 10px;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
             position: relative;
-            overflow: hidden;
+            overflow: visible; /* Ensures the dropdown isn't cut off */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -144,7 +143,7 @@
             z-index: 3;
         }
 
-        /* Edit/Delete Options */
+        /* Improved Edit/Delete Options */
         .menu-options {
             position: absolute;
             top: 30px;
@@ -155,22 +154,56 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 8px;
             padding: 8px;
             z-index: 3;
+            min-width: 120px;
+            overflow: visible;
         }
 
-        .menu-options a {
+        .menu-options a, .menu-options button {
+            display: flex;
+            align-items: center;
+            gap: 6px;
             color: #333;
             font-size: 0.9em;
             text-decoration: none;
-            padding: 5px 10px;
+            padding: 8px 10px;
             border-radius: 4px;
-            transition: background-color 0.2s ease;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            background: none;
         }
 
-        .menu-options a:hover {
-            background-color: #f0f0f0;
+        .menu-options a:hover, .menu-options button:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Specific styles for the delete button */
+        .menu-options button {
+            color: #c0392b;
+        }
+
+        .menu-options button:hover {
+            background-color: #f4c7c3;
+        }
+
+        /* Optional icons for better clarity */
+        .menu-options a::before {
+            content: '\f044';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 1em;
+            color: #2980b9;
+        }
+
+        .menu-options button::before {
+            content: '\f2ed';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 1em;
+            color: inherit;
         }
 
         /* Floating Button Styling */
@@ -182,7 +215,7 @@
         }
 
         .create-note button {
-            background-color: #8fc1a9; /* Matching soft green */
+            background-color: #28a745; 
             color: #ffffff;
             width: 60px;
             height: 60px;
@@ -195,7 +228,7 @@
         }
 
         .create-note button:hover {
-            background-color: #7da591;
+            background-color: #218838; 
             transform: scale(1.1);
         }
 
@@ -241,9 +274,13 @@
                 </span>
                 <div class="menu-options">
                     <a href="{{ route('notes.edit', ['note' => $note]) }}">Edit</a>
-                    <a href="{{ route('notes.delete', ['note' => $note]) }}">Delete</a>
+                    <form method="post" action="{{ route('notes.delete', ['note' => $note]) }}" style="margin: 0;">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" onclick="return confirm('Are you sure you want to delete this note?')" title="Delete Note">Delete</button>
+                    </form>
                 </div>
-                <a href="{{route('notes.view', ['note' => $note])}}">
+                <a href="{{ route('notes.view', ['note' => $note]) }}" style="text-decoration: none;">
                     <div>
                         <div class="note-title">{{ $note->title }}</div>
                         <div class="note-preview">{{ $note->notes }}</div>
@@ -253,7 +290,6 @@
                     </div>
                 </a>
             </div>
-     
         @endforeach
     </div>
     
