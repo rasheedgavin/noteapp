@@ -20,7 +20,7 @@
                     Created : {{ $note->created_at->diffForHumans() }}
                 @endif
             </p>
-        </header>
+        </header> 
 
         <main>
             <p>{{ $note->notes }}</p>
@@ -37,3 +37,18 @@
     </section>
 </body>
 </html>
+<style>
+    .edit-button, .delete-button {
+    color: white;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+</style>
