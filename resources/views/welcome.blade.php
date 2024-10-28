@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-    <title>Welome to my Noteapp</title>
+    <title>Welcome to my Noteapp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://wallpapers.com/images/hd/simple-solid-navy-blue-background-pegkdhi0fyi7d5aa.jpg');
+            background-image: url(https://img.freepik.com/free-vector/background-gradient-green-color-modern-abstract-designs_343694-2100.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             margin: 0;
             padding: 0;
-            color: #fff;
+            color: #3a4f41; /* Matching text color */
             display: flex;
             flex-direction: column;
             height: 100vh; /* Full height */
@@ -25,32 +26,33 @@
 
         .container {
             max-width: 90%; /* Fluid width */
-            margin: 20px auto; 
+            margin: 20px auto;
             padding: 20px;
-            background-color: rgba(0, 50, 100, 0.8);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background-color: #c4e3cb; /* Container background */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
         }
 
         h1 {
-            font-size: 36px; 
-            margin: 0; 
-            padding: 20px 0; 
+            font-size: 36px;
+            margin: 0;
+            padding: 20px 0;
+            color: #3a4f41; /* Matching heading color */
         }
 
         a {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #007BFF; 
-            color: white; 
-            border-radius: 4px; 
-            text-decoration: none; 
-            transition: background-color 0.3s ease; 
+            background-color: #28a745; /* Button color (green) */
+            color: white; /* Button text color */
+            border-radius: 4px; /* Rounded corners */
+            text-decoration: none;
+            transition: background-color 0.3s ease;
         }
 
         a:hover {
-            background-color: #0056b3; 
+            background-color: #218838; /* Darker hover effect */
         }
     </style>
 </head>

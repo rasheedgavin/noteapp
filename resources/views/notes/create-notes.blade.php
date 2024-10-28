@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Create a New Note</title>
     <style>
-       body {
+    body {
             font-family: Arial, sans-serif;
+            background-image: url(https://img.freepik.com/free-vector/background-gradient-green-color-modern-abstract-designs_343694-2100.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             background-color: #f3f4f6;
             color: #333;
             margin: 0;

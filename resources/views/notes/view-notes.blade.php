@@ -9,6 +9,10 @@
         /* Global Styles */
         body {
             font-family: Arial, sans-serif;
+            background-image: url(https://img.freepik.com/free-vector/background-gradient-green-color-modern-abstract-designs_343694-2100.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             background-color: #f3f4f6;
             color: #333;
             margin: 0;

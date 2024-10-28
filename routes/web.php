@@ -17,3 +17,4 @@ Route::get('/notes/{note}/view', [noteController::class, 'view'])->name('notes.v
 Route::get('/notes/{note}/edit', [noteController::class, 'edit'])->name('notes.edit');
 Route::put('/notes/{note}/update', [noteController::class, 'update'])->name('notes.update');
 Route::delete('/notes/{note}/delete', [noteController::class, 'delete'])->name('notes.delete');
+

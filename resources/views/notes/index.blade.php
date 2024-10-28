@@ -9,6 +9,10 @@
         /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
+            background-image: url(https://img.freepik.com/free-vector/background-gradient-green-color-modern-abstract-designs_343694-2100.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             background-color: #f3f4f6;
             color: #333;
             margin: 0;
@@ -51,9 +55,10 @@
             font-size: 2.5em;
             color: #333333;
             text-align: center;
-            background-color: #ffffff;
+            background-color: #c4e3cb;
             width: 100%;
             padding: 10px 0;
+            border-radius: 12px;
             margin: 0;
             position: sticky;
             top: 0;
@@ -66,12 +71,12 @@
             align-self: flex-start;
             position: fixed;
             top: 20px;
-            left: 20px;
+            left: 30px;
             z-index: 10;
         }
 
         .home-icon a {
-            color: #6b7280;
+            color: #28a745;
             font-size: 24px;
             text-decoration: none;
             transition: color 0.3s ease;

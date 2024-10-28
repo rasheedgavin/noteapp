@@ -10,10 +10,14 @@
         /* Global Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f3f4f6; /* Background color */
-            color: #333; /* Text color */
+            background-image: url(https://img.freepik.com/free-vector/background-gradient-green-color-modern-abstract-designs_343694-2100.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f3f4f6;
+            color: #333;
             margin: 0;
-            padding: 0 20px; /* Horizontal padding */
+            padding: 0 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -22,8 +26,7 @@
         }
 
         /* Background Graphics */
-        body::before,
-        body::after {
+        body::before, body::after {
             content: '';
             position: absolute;
             width: 250px;
@@ -32,33 +35,23 @@
             opacity: 0.1;
             z-index: 1;
         }
-
-        body::before {
-            background-color: #c7c9d3;
-            top: -60px;
-            left: -60px;
-        }
-
-        body::after {
-            background-color: #b0b3ba;
-            bottom: -60px;
-            right: -60px;
-        }
+        body::before { background-color: #c7c9d3; top: -60px; left: -60px; }
+        body::after { background-color: #b0b3ba; bottom: -60px; right: -60px; }
 
         /* Container Styling */
         .container {
             width: 95%;
-            max-width: 600px; /* Width of container */
-            height: 90vh; /* Increased height for more content space */
-            padding: 30px; /* Padding */
-            background-color: #c4e3cb; /* Container background color */
-            border-radius: 12px; /* Rounded corners */
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Shadow */
+            max-width: 600px;
+            height: 90vh;
+            padding: 30px;
+            background-color: #c4e3cb;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
             display: flex;
             flex-direction: column;
             position: relative;
-            z-index: 2; /* Ensures container is above background */
-            overflow: hidden; /* Prevent overflow */
+            z-index: 2;
+            overflow: hidden;
         }
 
         /* Back Button */
@@ -70,26 +63,31 @@
             border: none;
             cursor: pointer;
             font-size: 24px;
-            color: #4b5563; /* Change to your desired color */
+            color: #4b5563;
             transition: color 0.3s;
         }
-
-        .back-button:hover {
-            color: #4b5563;
-        }
+        .back-button:hover { color: #4b5563; }
 
         /* Title */
         h1 {
             margin-bottom: 20px;
-            font-size: 2.5rem; /* Title size */
-            color: #3a4f41; /* Title color */
-            text-align: center; /* Centered text */
+            font-size: 2.5rem;
+            color: #3a4f41;
+            text-align: center;
+        }
+
+        /* Timestamp */
+        .timestamp {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
         }
 
         /* Alert Styles */
         .alert.error {
-            background-color: #f44336; /* Error background */
-            color: white; /* Error text */
+            background-color: #f44336;
+            color: white;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -98,66 +96,70 @@
 
         /* Form Group Styles */
         .form-group {
-            margin-bottom: 0px; /* Remove spacing between form groups */
+            margin-bottom: 0px;
         }
-
         .form-control {
-            width: 100%; /* Full width */
-            padding: 10px; /* Inner spacing */
-            border: 1px solid #ddd; /* Light border */
-            border-radius: 4px; /* Rounded borders */
-            font-size: 16px; /* Font size */
-            box-sizing: border-box; /* Include padding in width */
-            background-color: #ffffff; /* Input background */
-            color: #4a6057; /* Input text color */
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            color: #4a6057;
+        }
+        textarea.form-control {
+            resize: vertical;
+            height: 350px;
+            max-height: 65vh;
+            min-height: 150px;
         }
 
-        textarea.form-control {
-            resize: vertical; /* Allow vertical resizing */
-            height: 350px; /* Set initial height for textarea */
-            max-height: 65vh; /* Max height for responsiveness */
-            min-height: 150px; /* Min height for usability */
+        /* Counter Styling */
+        .character-counter {
+            margin-top: 5px;
+            text-align: right;
+            color: #555;
+            font-size: 0.9rem;
         }
 
         /* Actions Container */
         .actions {
-            text-align: center; /* Centered actions */
-            margin-top: 20px; /* Spacing above actions */
+            text-align: center;
+            margin-top: 20px;
         }
-
         .update-button {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            background-color: #28a745; 
-            color: white; /* Text color */
+            background-color: #28a745;
+            color: white;
             border: none;
             border-radius: 50%;
-            width: 60px; /* Size */
-            height: 60px; /* Size */
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s;
-            z-index: 10; /* Ensure it's above other elements */
-            font-size: 24px; /* Increase font size for better visibility */
+            z-index: 10;
+            font-size: 24px;
         }
-
-        .update-button:hover {
-            background-color: #218838; 
-        }
-
+        .update-button:hover { background-color: #218838; }
     </style>
 </head>
 <body>
     <div class="container">
         <button class="back-button" onclick="window.history.back();">
-            <i class="fas fa-arrow-left"></i> <!-- Back arrow icon -->
+            <i class="fas fa-arrow-left"></i>
         </button>
-        
+
         <h1>Edit Note</h1>
-        
+
+        <!-- Real-time Timestamp -->
+        <div class="timestamp" id="timestamp"></div>
+
         @if($errors->any())
             <div class="alert error">
                 <ul>
@@ -171,21 +173,50 @@
         <form method="post" action="{{ route('notes.update', ['note' => $note]) }}" style="flex-grow: 1; display: flex; flex-direction: column;">
             @csrf
             @method('put')
-            
+
             <div class="form-group">
                 <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{ $note->title }}" required>
             </div>
 
             <div class="form-group">
                 <textarea id="notes" name="notes" class="form-control" placeholder="Your notes here..." required>{{ $note->notes }}</textarea>
+                <div class="character-counter" id="characterCounter">0 / 10000</div>
             </div>
 
             <div class="actions">
                 <button type="submit" class="update-button">
-                    <i class="fas fa-check"></i> <!-- Check icon -->
+                    <i class="fas fa-check"></i>
                 </button>
             </div>
         </form>
     </div>
+
+    <script>
+        // Character counting logic
+        const notesTextarea = document.getElementById('notes');
+        const characterCounter = document.getElementById('characterCounter');
+        const maxCharacters = 10000;
+
+        notesTextarea.addEventListener('input', () => {
+            const currentLength = notesTextarea.value.length;
+            characterCounter.textContent = `${currentLength} / ${maxCharacters}`;
+            if (currentLength >= maxCharacters) {
+                notesTextarea.value = notesTextarea.value.substring(0, maxCharacters);
+            }
+        });
+        characterCounter.textContent = `${notesTextarea.value.length} / ${maxCharacters}`;
+
+        // Real-time timestamp logic
+        const timestampElement = document.getElementById('timestamp');
+        function updateTimestamp() {
+            const now = new Date();
+            const formattedTime = now.toLocaleString();
+            timestampElement.textContent = `Last edited: ${formattedTime}`;
+        }
+
+        // Update timestamp on page load and input changes
+        updateTimestamp();
+        notesTextarea.addEventListener('input', updateTimestamp);
+    </script>
 </body>
 </html>
